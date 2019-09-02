@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: pi
 spec:
-  schedule: "*/5 * * * *" 
+  schedule: "*/1 * * * *" 
   jobTemplate:            
     spec:
       template:
@@ -14,5 +14,5 @@ spec:
           containers:
           - name: pi
             image: perl
-            command: ["perl",  "-Mbignum=bpi", "-wle", "print bpi(2000)"]
+            command: ["perl",  "-Mbignum=bpi", "-wle", "print bpi(1999)"]
           restartPolicy: OnFailure
